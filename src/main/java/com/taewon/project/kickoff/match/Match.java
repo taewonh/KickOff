@@ -1,6 +1,7 @@
 package com.taewon.project.kickoff.match;
 
 import com.taewon.project.kickoff.league.League;
+import com.taewon.project.kickoff.season.Season;
 import com.taewon.project.kickoff.team.Team;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -27,6 +28,10 @@ public class Match {
     @ManyToOne
     @JoinColumn(name = "league_id")
     private League league;
+
+    @ManyToOne
+    @JoinColumn(name = "season_id")
+    private Season season;
 
     private LocalDateTime startTime;
 
